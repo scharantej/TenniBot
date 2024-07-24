@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tennis Match</title>
+</head>
+<body>
+<h1>Tennis Match</h1>
+<h2>{{ match.player1_name }} vs. {{ match.player2_name }}</h2>
+<div>
+<p>Score:</p>
+<p>{{ match.score[0] }} - {{ match.score[1] }}</p>
+</div>
+<form action="/record_point" method="POST">
+<label for="player_name">Player Name:</label>
+<select name="player_name" id="player_name">
+<option value="{{ match.player1_name }}">{{ match.player1_name }}</option>
+<option value="{{ match.player2_name }}">{{ match.player2_name }}</option>
+</select>
+<br>
+<label for="point_type">Point Type:</label>
+<select name="point_type" id="point_type">
+<option value="serve">Serve</option>
+<option value="volley">Volley</option>
+<option value="groundstroke">Groundstroke</option>
+<option value="overhead">Overhead</option>
+</select>
+<br>
+<input type="submit" value="Record Point">
+</form>
+</body>
+</html>
+
